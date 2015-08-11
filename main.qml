@@ -9,12 +9,8 @@ Window {
 
     Item {
         id: displayArea
-        anchors {
-            top: parent.top
-            left: parent.left
-            right: parent.right
-            bottom: currencyArea.top
-        }
+        width: parent.width
+        height: parent.height * .8
 
         Text {
             id: priceLabel
@@ -24,7 +20,7 @@ Window {
             }
 
             font {
-                family: "Oswald"
+                family: "Oswald, Source Han Sans TC, sans-serif"
                 pointSize: 256
                 weight: Font.DemiBold
             }
@@ -32,6 +28,7 @@ Window {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             fontSizeMode: Text.Fit
+            renderType: Text.NativeRendering
 
             text: "5000"
         }
@@ -77,6 +74,7 @@ Window {
                 priceLabel.text = "0"
             }
             text = ""
+            tickAnimation.start()
         }
 
         Text {
@@ -89,6 +87,32 @@ Window {
             font: parent.font
             color: parent.color
             text: ":"
+        }
+    }
+
+    ParallelAnimation {
+        id: tickAnimation
+
+        NumberAnimation {
+            target: priceLabel
+            property: "opacity"
+            from: 0.5; to: 1
+            duration: 500
+            easing.type: Easing.OutBack
+        }
+
+        NumberAnimation {
+            target: displayArea
+            property: "y"
+            from: priceLabel.height * .15
+            to: 0
+            duration: 500
+            easing.type: Easing.OutBack
+        }
+
+        function play() {
+            if (running) stop()
+            start()
         }
     }
 }
