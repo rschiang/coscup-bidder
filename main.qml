@@ -33,7 +33,7 @@ Window {
             verticalAlignment: Text.AlignVCenter
             fontSizeMode: Text.Fit
 
-            text: "6890"
+            text: "5000"
         }
     }
 
@@ -44,6 +44,51 @@ Window {
             left: parent.left
             right: parent.right
         }
+
         height: parent.height * .2
+    }
+
+    TextInput {
+        id: input
+        anchors {
+            bottom: parent.bottom
+            left: parent.left
+            right: parent.right
+
+            bottomMargin: 4
+            leftMargin: 12
+            rightMargin: 12
+        }
+
+        font {
+            family: "Menlo"
+            pointSize: 12
+        }
+
+        color: "#555"
+        selectionColor: color
+        selectedTextColor: "#fff"
+        focus: true
+
+        Keys.onReturnPressed: {
+            if (text.length) {
+                priceLabel.text = text
+            } else {
+                priceLabel.text = "0"
+            }
+            text = ""
+        }
+
+        Text {
+            id: inputPrompt
+            anchors {
+                right: parent.left
+                baseline: parent.baseline
+            }
+
+            font: parent.font
+            color: parent.color
+            text: ":"
+        }
     }
 }
