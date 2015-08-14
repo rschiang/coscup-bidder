@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>CurrencyItem.qml</file>
         <file>Currency.js</file>
+        <file>coscup.png</file>
     </qresource>
 </RCC>

@@ -6,9 +6,14 @@ import "Currency.js" as Currency
 Window {
     id: window
     visible: true
-    width: 800
-    height: 600
+    width: 1024
+    height: 768
     title: "COSCUP Bidder"
+
+    Image {
+        anchors.fill: parent
+        source: "coscup.png"
+    }
 
     Item {
         id: displayArea
