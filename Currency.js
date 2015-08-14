@@ -40,12 +40,14 @@ function get(currency, base) {
         return "ERR!"
     } else {
         var rate = Number(item.cash_buy)
-        var t = Math.round(base / rate * 100)
+        var t = base / rate
         var s = String(t)
-        if (t % 100 == 0) {
-            return s.substring(0, s.length - 2)
+        var i = s.indexOf(".")
+
+        if (i < 0) {
+            return s
         } else {
-            return s.substring(0, s.length - 2) + "." + s.substring(-2)
+            return s.substr(0, i) + "." + s.substr(i+1, 2)
         }
     }
 }
