@@ -4,5 +4,8 @@
         <file>CurrencyItem.qml</file>
         <file>Currency.js</file>
         <file>coscup.png</file>
+        <file>fonts/OFL.txt</file>
+        <file>fonts/Oswald-Bold.ttf</file>
+        <file>fonts/Oswald-Regular.ttf</file>
     </qresource>
 </RCC>

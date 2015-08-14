@@ -10,6 +10,9 @@ Window {
     height: 768
     title: "COSCUP Bidder"
 
+    FontLoader { source: "fonts/Oswald-Regular.ttf" }
+    FontLoader { source: "fonts/Oswald-Bold.ttf" }
+
     Image {
         anchors.fill: parent
         source: "coscup.png"
@@ -30,7 +33,7 @@ Window {
             font {
                 family: "Oswald, Source Han Sans TC, sans-serif"
                 pointSize: 256
-                weight: Font.DemiBold
+                weight: Font.Bold
             }
 
             horizontalAlignment: Text.AlignHCenter
