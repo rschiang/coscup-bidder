@@ -44,7 +44,7 @@ Item {
         height: parent.height * .724
         horizontalAlignment: Text.AlignLeft
         verticalAlignment: Text.AlignVCenter
-        font.pointSize: 256
+        font.pointSize: 112
         fontSizeMode: Text.Fit
 
         color: root.color
