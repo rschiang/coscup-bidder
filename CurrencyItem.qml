@@ -22,10 +22,11 @@ Item {
         }
 
         horizontalAlignment: Text.AlignLeft
-        verticalAlignment: Text.AlignVCenter
-        font.pointSize: 56
+        verticalAlignment: Text.AlignBottom
+        font.pointSize: 34
         fontSizeMode: Text.Fit
 
+        color: "#8a000000"
         font.family: "Oswald"
         font.weight: Font.Normal
     }
@@ -43,13 +44,13 @@ Item {
 
         height: parent.height * .724
         horizontalAlignment: Text.AlignLeft
-        verticalAlignment: Text.AlignVCenter
+        verticalAlignment: Text.AlignTop
         font.pointSize: 112
         fontSizeMode: Text.Fit
 
         color: root.color
         font.family: "Oswald"
-        font.weight: Font.DemiBold
+        font.weight: Font.Normal
 
         onTextChanged: animation.play()
     }
