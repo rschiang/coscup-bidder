@@ -10,7 +10,7 @@ Window {
     Item {
         id: displayArea
         width: parent.width
-        height: parent.height * .8
+        height: parent.height * .618
 
         Text {
             id: priceLabel
@@ -42,24 +42,24 @@ Window {
             right: parent.right
         }
 
-        height: parent.height * .2
+        height: parent.height * .382
 
         CurrencyItem {
             id: currencyUSD
             currency: "USD"
-            color: "blue"
+            color: "#3F51B5"
         }
 
         CurrencyItem {
             id: currencyHKD
             currency: "HKD"
-            color: "orange"
+            color: "#FFC107"
         }
 
         CurrencyItem {
             id: currencyRMB
             currency: "RMB"
-            color: "red"
+            color: "#F44336"
         }
     }
 
@@ -135,5 +135,16 @@ Window {
             if (running) stop()
             start()
         }
+    }
+
+    HttpRequestHelper {
+        id: helper
+        onDone: {
+            var response = JSON.parse(data)
+        }
+    }
+
+    Component.onCompleted:{
+        helper.send("https://www.kimonolabs.com/api/5gwbb852?apikey=Wrog1m1TeyQhJb3LMNuzQrvJ7sTpxlya")
     }
 }
