@@ -28,8 +28,6 @@ Item {
 
         font.family: "Oswald"
         font.weight: Font.Normal
-
-        Rectangle { color: "#9933b5e5"; anchors.fill: parent }
     }
 
     Text {
@@ -54,7 +52,6 @@ Item {
         font.weight: Font.DemiBold
 
         onTextChanged: animation.play()
-        Rectangle { color: "#992b7500"; anchors.fill: parent }
     }
 
     NumberAnimation {

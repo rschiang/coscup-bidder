@@ -1,7 +1,10 @@
 import QtQuick 2.3
 import QtQuick.Window 2.2
 
+import "Currency.js" as Currency
+
 Window {
+    id: window
     visible: true
     width: 800
     height: 600
@@ -30,7 +33,7 @@ Window {
             fontSizeMode: Text.Fit
             renderType: Text.NativeRendering
 
-            text: "5000"
+            text: "..."
         }
     }
 
@@ -88,11 +91,16 @@ Window {
         Keys.onReturnPressed: {
             if (text.length) {
                 priceLabel.text = text
-                currencyUSD.price = Math.round(text / 32)
-                currencyHKD.price = Math.round(text / 4)
-                currencyRMB.price = Math.round(text / 5)
+
+                var price = Number(text)
+                if (isNaN(price)) {
+                    window.clear()
+                } else {
+                    window.update(text)
+                }
             } else {
                 priceLabel.text = "0"
+                window.clear()
             }
             text = ""
             tickAnimation.start()
@@ -137,14 +145,19 @@ Window {
         }
     }
 
-    HttpRequestHelper {
-        id: helper
-        onDone: {
-            var response = JSON.parse(data)
-        }
+    function clear() {
+        currencyUSD.price = Currency.get("美金 (USD)", 1)
+        currencyHKD.price = Currency.get("港幣 (HKD)", 1)
+        currencyRMB.price = Currency.get("人民幣 (CNY)", 1)
     }
 
-    Component.onCompleted:{
-        helper.send("https://www.kimonolabs.com/api/5gwbb852?apikey=Wrog1m1TeyQhJb3LMNuzQrvJ7sTpxlya")
+    function update(price) {
+        currencyUSD.price = Currency.get("美金 (USD)", price)
+        currencyHKD.price = Currency.get("港幣 (HKD)", price)
+        currencyRMB.price = Currency.get("人民幣 (CNY)", price)
+    }
+
+    Component.onCompleted: {
+        Currency.load()
     }
 }
