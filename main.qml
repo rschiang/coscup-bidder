@@ -34,7 +34,7 @@ Window {
         }
     }
 
-    Item {
+    Row {
         id: currencyArea
         anchors {
             bottom: parent.bottom
@@ -43,6 +43,24 @@ Window {
         }
 
         height: parent.height * .2
+
+        CurrencyItem {
+            id: currencyUSD
+            currency: "USD"
+            color: "blue"
+        }
+
+        CurrencyItem {
+            id: currencyHKD
+            currency: "HKD"
+            color: "orange"
+        }
+
+        CurrencyItem {
+            id: currencyRMB
+            currency: "RMB"
+            color: "red"
+        }
     }
 
     TextInput {
@@ -70,6 +88,9 @@ Window {
         Keys.onReturnPressed: {
             if (text.length) {
                 priceLabel.text = text
+                currencyUSD.price = Math.round(text / 32)
+                currencyHKD.price = Math.round(text / 4)
+                currencyRMB.price = Math.round(text / 5)
             } else {
                 priceLabel.text = "0"
             }
