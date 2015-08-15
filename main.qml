@@ -104,8 +104,9 @@ Window {
                 if (text == "refresh") {
                     priceLabel.text = "..."
                     Currency.load()
-                }
-                else if (isNaN(price)) {
+                } else if (text == "exit") {
+                    Qt.quit()
+                } else if (isNaN(price)) {
                     window.clear()
                 } else {
                     window.update(text)
