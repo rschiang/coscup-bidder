@@ -1,4 +1,10 @@
-android-no-sdk {
+mac {
+    ICON = platform/mac/coscup.icns
+    QMAKE_INFO_PLIST = platform/mac/Info.plist
+    QMAKE_MAC_SDK = macosx10.9
+
+    QMAKE_POST_LINK += macdeployqt CoscupBidder.app -qmldir=../CoscupBidder -dmg -verbose=3;
+} else:android-no-sdk {
     target.path = /data/user/qt
     export(target.path)
     INSTALLS += target

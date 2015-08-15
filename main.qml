@@ -8,7 +8,7 @@ Window {
     visible: true
     width: 1024
     height: 768
-    title: "COSCUP Bidder"
+    title: "COSCUP 拍賣會"
 
     FontLoader { source: "fonts/Oswald-Regular.ttf" }
     FontLoader { source: "fonts/Oswald-Bold.ttf" }
@@ -57,19 +57,19 @@ Window {
 
         CurrencyItem {
             id: currencyUSD
-            currency: "USD"
+            currency: "USD 美金"
             color: "#3F51B5"
         }
 
         CurrencyItem {
             id: currencyHKD
-            currency: "HKD"
+            currency: "HKD 港幣"
             color: "#FFC107"
         }
 
         CurrencyItem {
             id: currencyRMB
-            currency: "RMB"
+            currency: "RMB 人民幣"
             color: "#F44336"
         }
     }
