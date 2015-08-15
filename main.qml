@@ -117,7 +117,8 @@ Window {
             } else {
                 blankCount += 1
                 if (blankCount >= 2) {
-                    var sentences = ["感謝", "銘謝惠顧", "無任感禱", "多謝", "承蒙您", "安仔細", "Thanks"]
+                    var sentences = ["感謝", "銘謝惠顧", "無任感禱", "多謝", "承蒙您",
+                                     "安仔細", "Thanks", "感恩開源", "讚嘆開源", "We ♥︎ Open"]
                     priceLabel.text = sentences[Math.floor(Math.random() * sentences.length)]
                 } else {
                     priceLabel.text = "0"
