@@ -31,7 +31,7 @@ Window {
             }
 
             font {
-                family: "Oswald, Source Han Sans TC, sans-serif"
+                family: "Oswald, Source Han Sans TC, LiHei Pro, sans-serif"
                 pointSize: 256
                 weight: Font.Bold
             }

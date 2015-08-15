@@ -27,7 +27,7 @@ Item {
         fontSizeMode: Text.Fit
 
         color: "#8a000000"
-        font.family: "Oswald"
+        font.family: "Oswald, LiHei Pro, sans-serif"
         font.weight: Font.Normal
     }
 
