@@ -96,9 +96,12 @@ Window {
         selectedTextColor: "#fff"
         focus: true
 
+        property int blankCount: 0
+
         Keys.onReturnPressed: {
             if (text.length) {
                 priceLabel.text = text
+                blankCount = 0
 
                 var price = Number(text)
                 if (text == "refresh") {
@@ -112,7 +115,14 @@ Window {
                     window.update(text)
                 }
             } else {
-                priceLabel.text = "0"
+                blankCount += 1
+                if (blankCount >= 2) {
+                    var sentences = ["感謝", "銘謝惠顧", "無任感禱", "多謝", "承蒙您", "安仔細", "Thanks"]
+                    priceLabel.text = sentences[Math.floor(Math.random() * sentences.length)]
+                } else {
+                    priceLabel.text = "0"
+                }
+
                 window.clear()
             }
             text = ""
