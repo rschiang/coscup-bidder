@@ -3,7 +3,7 @@ mac {
     QMAKE_INFO_PLIST = platform/mac/Info.plist
     QMAKE_MAC_SDK = macosx10.9
 
-    CONFIG(!debug) {
+    CONFIG(release) {
         QMAKE_POST_LINK += macdeployqt CoscupBidder.app -qmldir=../CoscupBidder -dmg -verbose=3;
     }
 } else:android-no-sdk {
