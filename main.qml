@@ -101,7 +101,11 @@ Window {
                 priceLabel.text = text
 
                 var price = Number(text)
-                if (isNaN(price)) {
+                if (text == "refresh") {
+                    priceLabel.text = "..."
+                    Currency.load()
+                }
+                else if (isNaN(price)) {
                     window.clear()
                 } else {
                     window.update(text)
