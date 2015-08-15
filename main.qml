@@ -104,10 +104,10 @@ Window {
                 blankCount = 0
 
                 var price = Number(text)
-                if (text == "refresh") {
+                if (text == "refresh" || text == "r") {
                     priceLabel.text = "..."
                     Currency.load()
-                } else if (text == "exit") {
+                } else if (text == "exit" || text == "quit" || text == "q") {
                     Qt.quit()
                 } else if (isNaN(price)) {
                     window.clear()
