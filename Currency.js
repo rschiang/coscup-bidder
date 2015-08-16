@@ -37,7 +37,7 @@ function load() {
 function get(currency, base) {
     var item = currencies[currency]
     if (!item) {
-        return "ERR!"
+        return "無價"//"ERR!"
     } else {
         var rate = Number(item.cash_buy)
         var t = base / rate
